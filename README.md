@@ -23,10 +23,16 @@ A highly embeddable library which implements Matrix Event Graph (MEG) structures
 Sub-goals:
  - [Deterministic Simulation Testing](https://journal.resonatehq.io/p/deterministic-simulation-testing)
    for robustness. This is achieved by presenting an API surface which is completely deterministic, and
-   therefore can be exhaustively tested. This is why this library lacks any kind of concurrency, as that
-   would introduce non-determinism.
+   therefore can be exhaustively tested. This is why this library lacks any kind of concurrency or network requests,
+   as that would introduce non-determinism.
+ - Better [timeline event ordering](https://artificialworlds.net/blog/2024/12/04/message-order-in-matrix/) algorithms.
+
+Stretch goals:
+ - An experimental playing ground for new protocol designs e.g set reconciliation, DAG chunking (
+  [Sedimentree-style](https://github.com/inkandswitch/keyhive/blob/ec6e15d288f989712de42ce85d68f8983bb2a270/design/sedimentree.md))
 
 ### What this does not include
+ - Any network requests (e.g HTTP)
  - Signature checks
  - Signing events (and thus creating events)
  - Any concurrency: the caller must bring their own concurrency primitives.
